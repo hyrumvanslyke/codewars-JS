@@ -4,3 +4,21 @@
 
 // 'abc' =>  ['ab', 'c_']
 // 'abcdef' => ['ab', 'cd', 'ef']
+
+function solution(str) {
+    const pairs = [];
+  
+    for (let i = 0; i < str.length; i += 2) {
+      const pair = str.slice(i, i + 2);
+      pairs.push(pair);
+    }
+  
+    // If the string length is odd, add an underscore to the last pair
+    if (str.length % 2 !== 0) {
+      pairs[pairs.length - 1] += '_';
+    }
+  
+    return pairs;
+  }
+  console.log(solution('abcdefg'))
+  ////////////////////////////////////////////////////////////////////////////////
