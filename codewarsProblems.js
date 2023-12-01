@@ -136,3 +136,15 @@ function countDuplicates(input) {
 // All numbers are valid Int32, no need to validate them.
 // There will always be at least one number in the input string.
 // Output string must be two numbers separated by a single space, and highest number is first.
+function highAndLow(numbers) {
+    // Split the input string into an array of numbers
+    const numberArray = numbers.split(' ').map(Number);
+  
+    // Find the minimum and maximum values
+    const min = Math.min(...numberArray);
+    const max = Math.max(...numberArray);
+  
+    // Return the result as a formatted string
+    return `${max} ${min}`;
+  }
+  ///////////////////////////////////////////////////////////////////////////
