@@ -151,3 +151,22 @@ function highAndLow(numbers) {
 //   Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
 
 // moveZeros([false,1,0,1,2,0,1,3,"a"])  returns[false,1,1,2,1,3,"a",0,0]
+
+function moveZeros(array) {
+    // Filter out the non-zero elements and zeros separately
+    const nonZeros = array.filter(element => element !== 0);
+    const zeros = array.filter(element => element === 0);
+  
+    // Concatenate the non-zero elements and zeros to get the final result
+    const result = nonZeros.concat(zeros);
+  
+    return result;
+  }
+  
+  // Example:
+  const inputArray = [false, 1, 0, 1, 2, 0, 1, 3, "a"];
+  const resultArray = moveZeros(inputArray);
+  console.log(resultArray);
+  // Output: [false, 1, 1, 2, 1, 3, "a", 0, 0]
+
+  ///////////////////////////////////////////////////////////////////////////////////
