@@ -205,3 +205,19 @@ function formatLikes(names) {
 // The maximum time never exceeds 359999 (99:59:59)
 
 // You can find some examples in the test fixtures.
+
+function formatTime(seconds) {
+    // Calculate hours, minutes, and remaining seconds
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const remainingSeconds = seconds % 60;
+  
+    // Format each component with leading zeros
+    const formattedHours = String(hours).padStart(2, '0');
+    const formattedMinutes = String(minutes).padStart(2, '0');
+    const formattedSeconds = String(remainingSeconds).padStart(2, '0');
+  
+    // Return the formatted time
+    return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+  }
+  ///////////////////////////////////////////////////////////////////////////
