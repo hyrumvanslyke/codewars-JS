@@ -228,3 +228,24 @@ function formatTime(seconds) {
 
 // The input will always be valid (numbers will be an array of length 2 or greater, and all of the items will be numbers; target will always be the sum of two different items from that array).
 
+function twoSum(numbers, target) {
+    // Create a map to store the indices of numbers
+    const numIndices = new Map();
+  
+    // Iterate through the array
+    for (let i = 0; i < numbers.length; i++) {
+      const complement = target - numbers[i];
+  
+      // Check if the complement exists in the map
+      if (numIndices.has(complement)) {
+        // Return the indices as a tuple
+        return [numIndices.get(complement), i];
+      }
+  
+      // Store the current number and its index in the map
+      numIndices.set(numbers[i], i);
+    }
+  
+    // No solution found
+    return null;
+  }
