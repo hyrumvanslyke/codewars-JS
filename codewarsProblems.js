@@ -273,3 +273,21 @@ function inArray(array1,array2){
 //  2.  If the character in the string is whitespace then pass over it as if it was an empty seat
 // Example
 // wave("hello") => ["Hello", "hEllo", "heLlo", "helLo", "hellO"]
+function wave(str) {
+    const result = [];
+  
+    for (let i = 0; i < str.length; i++) {
+      if (str[i] !== ' ') {
+        // Create a wave by capitalizing the current character
+        const waveString = str.slice(0, i) + str[i].toUpperCase() + str.slice(i + 1);
+        result.push(waveString);
+      }
+    }
+  
+    return result;
+  }
+  
+  // Example:
+  console.log(wave("hello"));
+  // Output: ["Hello", "hEllo", "heLlo", "helLo", "hellO"]
+  ///////////////////////////////////////////////////////////////////////////
