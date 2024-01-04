@@ -6,16 +6,16 @@
 // 'abcdef' => ['ab', 'cd', 'ef']
 
 function solution(str) {
-    const pairs = [];
+    const pairs = []
   
     for (let i = 0; i < str.length; i += 2) {
-      const pair = str.slice(i, i + 2);
-      pairs.push(pair);
+      const pair = str.slice(i, i + 2)
+      pairs.push(pair)
     }
   
     // If the string length is odd, add an underscore to the last pair
     if (str.length % 2 !== 0) {
-      pairs[pairs.length - 1] += '_';
+      pairs[pairs.length - 1] += '_'
     }
   
     return pairs;
@@ -30,7 +30,7 @@ function solution(str) {
 // solution('abc', 'bc')  returns true
 // solution('abc', 'd')  returns false
 function solution(str, ending) {
-    return str.endsWith(ending);
+    return str.endsWith(ending)
   }
 
   console.log(solution('abc', 'gbc'))
@@ -55,20 +55,20 @@ function maskify(str) {
     // Check if the string length is greater than 4
     if (str.length > 4) {
       // Replace all characters except the last four with '#'
-      return '#'.repeat(str.length - 4) + str.slice(-4);
+      return '#'.repeat(str.length - 4) + str.slice(-4)
     } else {
       // Return the original string if its length is 4 or less
-      return str;
+      return str
     }
   }
   
   // Examples:
-  console.log(maskify("4556364607935616")); // Output: "############5616"
-  console.log(maskify("64607935616"));      // Output: "#######5616"
-  console.log(maskify("1"));                // Output: "1"
-  console.log(maskify(""));                 // Output: ""
-  console.log(maskify("Skippy"));           // Output: "##ippy"
-  console.log(maskify("Nananananananananananananananana Batman!"));
+  console.log(maskify("4556364607935616")) // Output: "############5616"
+  console.log(maskify("64607935616"))      // Output: "#######5616"
+  console.log(maskify("1"))               // Output: "1"
+  console.log(maskify(""))                // Output: ""
+  console.log(maskify("Skippy"))          // Output: "##ippy"
+  console.log(maskify("Nananananananananananananananana Batman!"))
 
   //////////////////////////////////////////////////////////////////////////////////
 
@@ -83,12 +83,12 @@ function maskify(str) {
 
 function descendingOrder(n) {
     // Convert the number to a string, split its digits, and sort them in descending order
-    const sortedDigits = n.toString().split('').sort((a, b) => b - a);
+    const sortedDigits = n.toString().split('').sort((a, b) => b - a)
   
     // Join the sorted digits and convert back to a number
-    const result = parseInt(sortedDigits.join(''), 10);
+    const result = parseInt(sortedDigits.join(''), 10)
   
-    return result;
+    return result
   }
 
   /////////////////////////////////////////////////////////////////////////////////
@@ -106,24 +106,24 @@ function descendingOrder(n) {
 
 function countDuplicates(input) {
     // Convert the input string to lowercase for case-insensitive comparison
-    const lowercaseInput = input.toLowerCase();
+    const lowercaseInput = input.toLowerCase()
     
     // Create an object to store character occurrences
-    const charCount = {};
+    const charCount = {}
   
     // Iterate through each character in the input string
     for (let char of lowercaseInput) {
       // Ignore non-alphabetic and non-numeric characters
       if (/[a-z0-9]/.test(char)) {
         // If the character is not in the object, add it; otherwise, increment its count
-        charCount[char] = (charCount[char] || 0) + 1;
+        charCount[char] = (charCount[char] || 0) + 1
       }
     }
   
     // Count the characters that occur more than once
-    const duplicatesCount = Object.values(charCount).filter(count => count > 1).length;
+    const duplicatesCount = Object.values(charCount).filter(count => count > 1).length
   
-    return duplicatesCount;
+    return duplicatesCount
   }
   //////////////////////////////////////////////////////////////////////////////
 //   In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
@@ -138,14 +138,14 @@ function countDuplicates(input) {
 // Output string must be two numbers separated by a single space, and highest number is first.
 function highAndLow(numbers) {
     // Split the input string into an array of numbers
-    const numberArray = numbers.split(' ').map(Number);
+    const numberArray = numbers.split(' ').map(Number)
   
     // Find the minimum and maximum values
-    const min = Math.min(...numberArray);
-    const max = Math.max(...numberArray);
+    const min = Math.min(...numberArray)
+    const max = Math.max(...numberArray)
   
     // Return the result as a formatted string
-    return `${max} ${min}`;
+    return `${max} ${min}`
   }
   ///////////////////////////////////////////////////////////////////////////
 //   Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
@@ -154,19 +154,19 @@ function highAndLow(numbers) {
 
 function moveZeros(array) {
     // Filter out the non-zero elements and zeros separately
-    const nonZeros = array.filter(element => element !== 0);
-    const zeros = array.filter(element => element === 0);
+    const nonZeros = array.filter(element => element !== 0)
+    const zeros = array.filter(element => element === 0)
   
     // Concatenate the non-zero elements and zeros to get the final result
-    const result = nonZeros.concat(zeros);
+    const result = nonZeros.concat(zeros)
   
-    return result;
+    return result
   }
   
   // Example:
-  const inputArray = [false, 1, 0, 1, 2, 0, 1, 3, "a"];
-  const resultArray = moveZeros(inputArray);
-  console.log(resultArray);
+  const inputArray = [false, 1, 0, 1, 2, 0, 1, 3, "a"]
+  const resultArray = moveZeros(inputArray)
+  console.log(resultArray)
   // Output: [false, 1, 1, 2, 1, 3, "a", 0, 0]
 
   ///////////////////////////////////////////////////////////////////////////////////
@@ -183,16 +183,16 @@ function moveZeros(array) {
 
 function formatLikes(names) {
     if (names.length === 0) {
-      return "no one likes this";
+      return "no one likes this"
     } else if (names.length === 1) {
-      return `${names[0]} likes this`;
+      return `${names[0]} likes this`
     } else if (names.length === 2) {
-      return `${names[0]} and ${names[1]} like this`;
+      return `${names[0]} and ${names[1]} like this`
     } else if (names.length === 3) {
-      return `${names[0]}, ${names[1]} and ${names[2]} like this`;
+      return `${names[0]}, ${names[1]} and ${names[2]} like this`
     } else {
-      const othersCount = names.length - 2;
-      return `${names[0]}, ${names[1]} and ${othersCount} others like this`;
+      const othersCount = names.length - 2
+      return `${names[0]}, ${names[1]} and ${othersCount} others like this`
     }
   }
 
@@ -208,17 +208,17 @@ function formatLikes(names) {
 
 function formatTime(seconds) {
     // Calculate hours, minutes, and remaining seconds
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    const remainingSeconds = seconds % 60;
+    const hours = Math.floor(seconds / 3600)
+    const minutes = Math.floor((seconds % 3600) / 60)
+    const remainingSeconds = seconds % 60
   
     // Format each component with leading zeros
-    const formattedHours = String(hours).padStart(2, '0');
-    const formattedMinutes = String(minutes).padStart(2, '0');
-    const formattedSeconds = String(remainingSeconds).padStart(2, '0');
+    const formattedHours = String(hours).padStart(2, '0')
+    const formattedMinutes = String(minutes).padStart(2, '0')
+    const formattedSeconds = String(remainingSeconds).padStart(2, '0')
   
     // Return the formatted time
-    return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+    return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`
   }
   ///////////////////////////////////////////////////////////////////////////
 
