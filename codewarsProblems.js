@@ -230,24 +230,24 @@ function formatTime(seconds) {
 
 function twoSum(numbers, target) {
     // Create a map to store the indices of numbers
-    const numIndices = new Map();
+    const numIndices = new Map()
   
     // Iterate through the array
     for (let i = 0; i < numbers.length; i++) {
-      const complement = target - numbers[i];
+      const complement = target - numbers[i]
   
       // Check if the complement exists in the map
       if (numIndices.has(complement)) {
         // Return the indices as a tuple
-        return [numIndices.get(complement), i];
+        return [numIndices.get(complement), i]
       }
   
       // Store the current number and its index in the map
-      numIndices.set(numbers[i], i);
+      numIndices.set(numbers[i], i)
     }
   
     // No solution found
-    return null;
+    return null
   }
 
   //////////////////////////////////////////////////////////////////////
@@ -274,20 +274,20 @@ function inArray(array1,array2){
 // Example
 // wave("hello") => ["Hello", "hEllo", "heLlo", "helLo", "hellO"]
 function wave(str) {
-    const result = [];
+    const result = []
   
     for (let i = 0; i < str.length; i++) {
       if (str[i] !== ' ') {
         // Create a wave by capitalizing the current character
-        const waveString = str.slice(0, i) + str[i].toUpperCase() + str.slice(i + 1);
-        result.push(waveString);
+        const waveString = str.slice(0, i) + str[i].toUpperCase() + str.slice(i + 1)
+        result.push(waveString)
       }
     }
   
-    return result;
+    return result
   }
   
   // Example:
-  console.log(wave("hello"));
+  console.log(wave("hello"))
   // Output: ["Hello", "hEllo", "heLlo", "helLo", "hellO"]
   //////////////////////////////////////////////////////////////////////////////////////////
